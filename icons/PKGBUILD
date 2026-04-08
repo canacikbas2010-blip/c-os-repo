@@ -1,0 +1,14 @@
+pkgname=c-os-icons
+pkgver=1.0
+pkgrel=1
+pkgdesc="C-OS Custom Icons for Papirus Theme"
+arch=('any')
+url="https://github.com/canacikbas2010-blip/c-os-repo"
+license=('GPL')
+depends=('papirus-icon-theme')
+source=()
+
+package() {
+    mkdir -p "$pkgdir/usr/share/icons"
+    cp -r "$srcdir"/../* "$pkgdir/usr/share/icons/" 2>/dev/null || true
+}
