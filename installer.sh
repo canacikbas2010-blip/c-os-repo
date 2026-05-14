@@ -336,7 +336,10 @@ EOF
 
     success "C-OS repository registered."
 
-    arch-chroot /mnt pacman -Sy --noconfirm
+    arch-chroot /mnt pacman-key --init
+    arch-chroot /mnt pacman-key --populate archlinux
+
+    arch-chroot /mnt pacman -Syy --noconfirm
 
     arch-chroot /mnt pacman -S --noconfirm \
         papirus-icon-theme
